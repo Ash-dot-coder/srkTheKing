@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: rgb(199, 42, 42);
+}
+
+body {
+    position: relative;
+    /* background: #fff; */
+    background: url("https://i.pinimg.com/564x/6b/8c/1b/6b8c1bd32d6ede8506d3281fd58230a5.jpg")no-repeat center center/cover;
+    /* background: url("https://i.pinimg.com/564x/70/f5/bc/70f5bc679bd262c56bac3c8ff4d620e2.jpg")no-repeat center center/cover; */
+    font-family: "Space Grotesk", sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+a {
+    color: #000;
+}
+
+.fa-solid:hover {
+    color: var(--primary);
+    transition: 0.24s ease-in-out;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    z-index: 20;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+header.active {
+    width: 10%;
+}
+
+.logo {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 30px;
+    color: #000;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+header.active .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+    transform-origin: left;
+    overflow: hidden;
+}
+
+header.active .nav {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.nav li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+.nav li a {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 1.8em;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.nav li:hover a,
+.nav-mobile li:hover a {
+    color: var(--primary);
+}
+
+.nav-mobile {
+    position: absolute;
+    left: 50%;
+    top: 250%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+    transform-origin: top;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.nav-mobile.active {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-mobile li {
+    list-style: none;
+    transform: rotateZ(90deg);
+    margin-top: 110px;
+    width: 200px;
+}
+
+.nav-mobile li a {
+    text-decoration: none;
+    display: inline;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: 300;
+}
+
+.menu {
+    display: none;
+    font-size: 2em;
+    transition: 1s;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu i {
+    transform: rotateZ(0);
+    color: #000;
+}
+
+header.active .menu {
+    display: block;
+    transform: translateX(-50%) rotateZ(0);
+    transition: 0.5s;
+}
+
+.menu.active {
+    transform: translateX(-50%) rotateZ(45deg) !important;
+}
+
+.banner {
+    position: relative;
+    width: 45%;
+    min-height: 100vh;
+    padding: 0 60px;
+    background: tomato;
+    overflow: hidden;
+    transition: ease-in-out 1s;
+    z-index: 10;
+}
+
+.banner.active {
+    width: 10%;
+    transition: ease-in-out 1s;
+}
+
+.banner .content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.banner .content h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 10em;
+    letter-spacing: 2px;
+    font-weight: 300;
+    text-transform: uppercase;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    margin-bottom: 20px;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+.banner.active .content h1 {
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+    transform: translateX(-100%);
+}
+
+.banner .content a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+}
+
+.banner .content a.btn i {
+    font-size: 1.1em;
+}
+
+.banner .content a.btn:hover {
+    gap: 30px;
+}
+
+.banner .content .arrow {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    padding: 0;
+    transition: 0.5s;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;
+    border: none;
+    z-index: 100;
+}
+
+.banner .content .arrow i {
+    font-size: 2em;
+    transition: 0.5s;
+}
+
+.banner .content .arrow:hover i {
+    color: var(--primary);
+}
+
+.banner.active .content .arrow {
+    opacity: 1;
+    visibility: visible;
+}
+
+.banner.active .content a.btn {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.banner-middle {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    width: 45%;
+    height: 100vh;
+    padding: 0 10px;
+    background: rgba(0, 0, 0, 1);
+    overflow: hidden;
+    transition: ease-in-out 1s;
+    transition-delay: 0.2s;
+}
+
+.banner-middle.active {
+    left: 10%;
+}
+
+.banner-middle .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+/* Swipper */
+.swiper-romance,
+.swiper-action,
+.swiper-drama {
+    width: 100%;
+    height: 100vh;
+}
+
+.swiper-slide {
+    background: tomato;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner-right {
+    position: absolute;
+    top: 0;
+    left: 90%;
+    width: 45%;
+    height: 100vh;
+    padding: 50px 40px;
+    background: tomato;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    overflow: hidden;
+    transition: ease-in-out 1s;
+    transition-delay: 0.4s;
+}
+
+.banner-right.active {
+    left: 55%;
+}
+
+.banner-right h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 8.5em;
+    letter-spacing: 2px;
+    font-weight: 300;
+    text-transform: uppercase;
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 20px;
+    transition: 0.5s;
+    transform-origin: left;
+    line-height: 1em;
+}
+
+.banner-right .number {
+    position: absolute;
+    font-size: 6em;
+    top: 10%;
+    right: 15%;
+}
+
+.banner-right .content {
+    display: flex;
+    border-top: 1px solid;
+    border-image: linear-gradient(90deg, #000000, transparent, transparent) 30;
+}
+
+.content img {
+    padding: 20px;
+    max-width: 55%;
+    object-fit: cover;
+    border-left: 1px solid;
+    border-image: linear-gradient(#000000, transparent, transparent) 30;
+}
+
+.content .description {
+    padding: 20px;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(transparent, transparent, #000000) 30;
+}
+
+.content .description h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 3em;
+    letter-spacing: 1px;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+
+    .fa-solid{
+        font-size: 0.8em;
+    }
+}
+
+.content .description span {
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.content .description p {
+    font-size: 1.3em;
+    font-family: "Playwrite GB S", cursive;
+    font-weight: 318;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.content .description a {
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    transition: 0.5s;
+}
+
+.description h6 {
+    font-size: 0.8em;
+}
+
+.content .description a .fa-solid {
+    margin-left: 3px;
+    transition: 0.5s;
+    font-size: 2em;
+}
+
+.content .description a:hover {
+    color: var(--primary);
+}
+
+.footer-content {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 200;
+    font-size: 0.8em;
+}
+
+.credits a {
+    text-decoration: none;
+    color: #1d1d1d;
+    text-transform: uppercase;
+}
+
+.copyright {
+font-weight: 594;
+
+    span{
+    text-transform: uppercase;}
+}
+
+.sci {
+    position: absolute;
+    bottom: 30px;
+    right: 50%;
+    transform: translateX(50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    z-index: 20;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.sci a .fa-solid {
+    color: #000;
+    transition: 0.3s;
+}
+
+.sci a:hover .fa-solid {
+    color: var(--primary);
+}
