@@ -334,7 +334,7 @@ header.active .menu {
 
 .banner-right h1 {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 8.5em;
+    font-size: 7.5em;
     letter-spacing: 2px;
     font-weight: 300;
     text-transform: uppercase;
@@ -349,6 +349,7 @@ header.active .menu {
 .banner-right .number {
     position: absolute;
     font-size: 6em;
+    color: #1d1d1d;
     top: 10%;
     right: 15%;
 }
