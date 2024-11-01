@@ -346,6 +346,13 @@ header.active .menu {
     line-height: 1em;
 }
 
+.banner-right > h6{
+    font-size: 1em;
+    color: #1d1d1d;
+    letter-spacing: 0.24em;
+    font-weight: lighter;
+}
+
 .banner-right .number {
     position: absolute;
     font-size: 6em;
